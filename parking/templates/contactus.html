@@ -1,0 +1,164 @@
+<html>
+<head>
+    <title>Contact Us</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+}
+
+.container {
+	text-align:right;
+	margin-left:60px;
+	margin-right:110px;
+	color: white;
+	position:relative;
+	float:right;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #778899;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #1E90FF;
+  color: white;
+}
+
+.topright {
+  position: absolute;
+  top: 6px;
+  right: -300px;
+  font-size: 5px;
+}
+sales {
+	text-align:left;
+	margin-top:170px;
+	margin-right:50px;
+	margin-left:450x;
+	padding-left:90px;
+	color:white;
+}
+input[type=text], input[type=password] , input[type=number] , input[type=date], input[type=email]{
+  width: 30%;
+  border-radius: 25px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+.registerbtn {
+  background-color: #4169E1;
+  color: white;
+  padding: 15px 10px;
+  margin: 18px;
+  border-radius:25px;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+  font-size: 20px;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+.bg-color {
+  padding: 16px;
+  background-color: green;
+  /*background: #344761;*/
+  background:  linear-gradient(to left, #33ccff 0%, #339966 100%);
+  height: 870px;
+}
+.topbw {
+  position: absolute;
+  top: 25px;
+  right: 23px;
+  font-size: 1px;
+}
+.selectWrapper{
+border-radius:25px;
+display:inline-block;
+  overflow:hidden;
+  background:#f1f1f1;
+  border:1px solid #cccccc;
+}
+
+</style>
+</head>
+<body>
+<div class="bg-color">
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="/maps">Map</a>
+    <a href="/fare">Fare</a>
+    <a href="/aboutus">About us</a>
+    <a href="/complaint">Complaint</a>
+  <a href="/signup/">SignUp</a>
+  <a><div class="topbw"><img src="https://i.ibb.co/SsDM6pc/securepark.png" width="140" height="45"></div></a>
+</div>
+<h1 style="color:white; font-size:70px; text-align:center;color:black;font-family:cursive;">Contact Us</h1>
+<hr>
+<br>
+<div class="sales">
+ <div class="container">
+  <h2 style="text-align:center; font-size:40px;color:black;font-family:cursive;">Do you have any Questions?</h2>
+  <h4>Fill out our contact form and we will contact you as soon as possible</h4>
+  <form action="/contactus/" method="post">
+  {% csrf_token %}
+  <div class="form-group">
+   <input type="text" class="form-control" name="name" id="name" placeholder="Name" style="font-size:15px; height:40px; width:470px;"><br><br>
+  </div>
+  <div class="form-group">
+   <input type="email" class="form-control" name="mail" id="mail" placeholder="Email" style="font-size:15px; height:40px; width:470px;"><br><br>
+  </div>
+  <div class="form-group">
+   <input type="text" class="form-control" name="contactno" id="contactno" placeholder="Contact Number" style="font-size:15px; height:40px; width:470px;"><br><br>
+  </div>
+  <div class="form-group">
+   <div class="selectWrapper">
+   <textarea class="form-control" rows="3" cols="10" placeholder="Question" name="question" id="question" style="font-size:15px; height:40px; width:470px;"></textarea><br></div>
+  </div>
+  <button type="submit" class="registerbtn" style="margin-right:10px;">Submit</button>
+
+</form>
+ </div>
+<h1 style="color:white; font-size:40px;color:black;font-family:cursive;">Start a conversation.</h1>
+
+<h2 style="color:black;font-size:30px;">For sales queries</h2>
+<h4 style="color:white;font-size:20px;">sales@securepark.com</h4>
+<hr style="margin-right:500px; float:center;">
+
+<h2 style="color:black;font-size:30px;">For general queries</h2>
+<h4 style="color:white;font-size:20px;">care@securepark.com</h4>
+<hr>
+
+<h2 style="color:black;font-size:30px;">For career</h2>
+<h4 style="color:white;font-size:20px;">talent@securepark.com</h4>
+<hr>
+
+<h3 style="color:black;font-size:35px;">Helpline 096-501-569-82</h3>
+</div>
+</div>
+</body>
+</html>

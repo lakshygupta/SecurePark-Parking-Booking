@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.containerimg {
+  position: relative;
+}
+
+.topleft {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+}
+
+img {
+  width: 30%;
+  height: auto;
+  opacity: 1000;
+}
+.container {
+  padding: 16px;
+  background-color: white;
+  background-image:
+  radial-gradient(rgba(76,139,152,1), rgba(138,201,214,.05) 200px, transparent 400px),
+  radial-gradient(rgba(76,139,152,1), rgba(255,255,255,.1) 300px, transparent 400px),
+  radial-gradient(rgba(76,139,152,1), rgba(138,201,214,.1) 400px, transparent 400px);
+  background-size: 1000px 500px, 700px 500px, 700px 500px;
+  background-position: 0 -200px, 300px -100px, 700px -200px;
+  height: 1600px;
+}
+
+input[type=text], input[type=password] , input[type=number] , input[type=date], input[type=email]{
+  width: 63%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.registerbtn {
+  background-color: #4169E1;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;
+  font-size: 20px;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #778899;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #1E90FF;
+  color: white;
+}
+.topright {
+  position: absolute;
+  top: 6px;
+  right: -290px;
+  font-size: 1px;
+}
+
+.bg-image {
+
+  background-image: url("https://login.gov/assets/img/login-gov-288x288.png");
+
+
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+
+  height: 1800px;
+
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-heading {
+
+   background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.6);
+  font-weight: bold;
+   font-family: "Helvetica", Times, serif;
+  border: 3px solid #708090;
+  color: white;
+  border-radius: 25px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,18), 0 6px 20px 0 rgba(0,0,0,0.30);
+}
+.bg-text {
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.6);
+  font-weight: bold;
+   font-family: "Helvetica", Times, serif;
+  border: 3px solid #708090;
+  color: white;
+  border-radius: 25px;
+  position: absolute;
+  top: 170%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,18), 0 6px 20px 0 rgba(0,0,0,0.30);
+}
+
+</style>
+</head>
+<body>
+<div class="topnav">
+<a class="active" href="/">Home</a>
+  <a href="/maps">Map</a>
+    <a href="/fare">Fare</a>
+  <a href="/contactus">Contact us</a>
+    <a href="/aboutus">About us</a>
+    <a href="/complaint">Complaint</a>
+  <a href="/signup/">SignUp</a>
+    <a><div class="topright"><img src="https://i.ibb.co/SsDM6pc/securepark.png" width="210" height="40"></div></a>
+</div>
+
+
+
+
+<form action="/signup/" method="post">
+{% csrf_token %}
+
+  <div class="bg-image"></div>
+
+  <!div class="topleft">   <!img src="https://i.ibb.co/SsDM6pc/securepark.png" width="1000" height="300"><!/div>
+</div>
+
+<div class="bg-heading">
+    <h1>SignUp Form</h1>
+    <p>Please fill in this form to create an account.</p>
+</div>
+    <hr>
+    <div class="bg-text">
+        <div class="form-group">
+            {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+
+                    <div class="alert alert-success"> {{ message }}</div>
+
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    <div class="form-group">
+     <label for="fname"><b>First Name*</b></label><br>
+     <input type="text" class="form-control" id="fname" name='fname' placeholder="Enter Your First Name" minlength="2" maxlength="20" required><br><br>
+    </div>
+     <div class="form-group">
+      <label for="lname"><b>Last Name*</b></label><br>
+      <input type="text" class="form-control" id="lname" name='lname' placeholder="Enter Your Last Name" minlength="2" maxlength="20" required><br><br>
+    </div>
+    <div class="form-group">
+     <label for="email"><b>Email</b></label><br>
+     <input type="email" class="form-control" id="email" name='email' placeholder="Enter Email" name="email"><br><br>
+    </div>
+    <div class="form-group">
+     <label for="username"><b>UserName*</b></label><br>
+     <input type="text" class="form-control" id="username" name='username' placeholder="Enter Your UserName" required><br><br>
+    </div>
+    <div class="form-group">
+     <label for="password"><b>Password*</b></label><br>
+     <input type="password" class="form-control" id="password" name='password' placeholder="Enter Your password" minlength="8" maxlength="20"><br><br>
+    </div>
+    <div class="form-group">
+     <label for="passwordr"><b>Repeat Password*</b></label><br>
+     <input type="password" class="form-control" id="passwordr" name='passwordr'placeholder="Repeat Password" required minlength="8" maxlength="30"><br><br>
+    </div>
+    <div class="form-group">
+     <label for="addressfor"><b>Address</b></label><br>
+     <input type="text" class="form-control" id="addressfor" name='addressfor' placeholder="Enter Address*"><br><br>
+    </div>
+    <div class="form-group">
+     <label for="contactnumber"><b>Contact Number*</b></label><br>
+     <input type="number" class="form-control" id="contactnumber" name='contactnumber' placeholder="Contact Number" required maxlength="10" ><br><br>
+    </div>
+     <div class="form-group">
+      <label for="dob"><b>Date of Birth</b></label><br>
+      <input type="date" class="form-control" id="dob" name="dob"><br><br>
+     </div>
+    <div class="form-group">
+      <label for="ques"><b>Security Question*</b></label><br>
+        <select class="form-control" id="ques" name="ques" required style=" width: 394px; height: 50px; background-color: #f1f1f1;">
+      <option value="book">What Is your favorite book?</option>
+      <option value="food">What is your favorite food?</option>
+      <option value="city">What city were you born in?</option>
+      <option value="place">Where is your favorite place to vacation?</option>
+       </select>
+      <! input type="text" class="form-control" id="ques" name="ques"><br><br>
+     </div>
+    <br>
+    <div class="form-group">
+      <label for="answer"><b>Your Answer*</b></label><br>
+      <input type="text" class="form-control" id="answer" name="answer" placeholder="Enter your Answer" required><br><br>
+     </div>
+    <div class="form-group">
+     <label for="gender"><b>Gender</b></label><br>
+     <select class="form-control" id="gender" name="gender" style="width: 394px; height: 50px; background-color: #f1f1f1;">
+      <option>Select your Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="others">Others</option>
+     </select>
+    </div>
+
+<br><br>
+
+
+    <hr>
+    <p> *Indicates required fields </p>
+
+    <button type="reset" class="registerbtn">Reset Data</button>
+
+    <button type="submit" class="registerbtn">Register</button>
+
+  </div>
+</div>
+
+</form>
+
+</body>
+</html>

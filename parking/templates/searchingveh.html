@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="GET" action=" ">
+    {% csrf_token %}
+    <input type="text" placeholder="search vehicles">
+    <input type="submit" value="search">
+</form>
+
+{% if obj %}
+
+
+<b>Vehicle no:</b> {{ obj.vnumber}}<br><br>
+<b>Vehicle type:</b> {{ obj.vtype}}<br><br>
+<b>Contact no:</b> {{ obj.contactno}}<br><br>
+
+
+{% endif %}
+
+
+</body>
+</html>

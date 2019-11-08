@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>
+Complaints
+</title>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #778899;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #1E90FF;
+  color: white;
+}
+
+.topright {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 1px;
+}
+
+.bg-image {
+
+  background-image: url("https://i.ibb.co/dcCtkC4/keyboard.jpg");
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  height: 100%;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-text {
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.4);
+border-radius:25px;
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 70%;
+  padding: 0px;
+  text-align: center;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,40), 0 6px 20px 0 rgba(0,0,0,20);
+}
+.selectWrapper{
+  border-radius:25px;
+  display:inline-block;
+  overflow:hidden;
+
+  background-color:#C0C0C0;
+  border:1px solid #cccccc;
+}
+.selectBox{
+   border-radius:25px;
+
+  background-color:#C0C0C0;
+  width:140px;
+  height:40px;
+  border:0px;
+  outline:none;
+}
+.container {
+  padding: 0px;
+  background-color: white;
+  background-size: 1000px 500px, 700px 500px, 700px 500px;
+  background-position: 0 -200px, 300px -100px, 700px -200px;
+  height: 1270px;
+}
+
+.registerbtn {
+  background-color: #4169E1;
+  color: white;
+border-radius: 25px;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+  font-size: 20px;
+}
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+</style>
+</head>
+<body>
+<div class="container">
+<div align="center">
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="/maps">Map</a>
+    <a href="/fare">Fare</a>
+  <a href="/contactus">Contact us</a>
+    <a href="/aboutus">About us</a>
+  <a href="/signup/">SignUp</a>
+  <a><div class="topright"><img src="https://i.ibb.co/SsDM6pc/securepark.png" width="200" height="50"></div></a>
+</div>
+</div>
+<div class="bg-image"></div>
+<form action="/complaint/" method="post">
+  {% csrf_token %}
+
+<!img src="securepark.png" width="130" height="50">
+
+<!img src="securepark.png" width="130" height="50">
+<div align="center">
+
+
+<div class="bg-text">
+<h1 style="text-align:center; font-size:50px; color:white; font-family:sans-serif;">Complaints </h1>
+<p style="text-align:center; font-size:20px; color:white; font-family:sans-serif;">Sorry for the inconvenience :(  Please register your complaint here. </p>
+<hr>
+<h2 style="font-size:30px; color:white;">Name: </h2>
+<div class="form-group">
+ <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name" style="border-radius:10px; color: #000000;  background-color:#C0C0C0; width:240px; height:37px;">
+</div>
+<div class="form-group">
+ <input type="text" class="form-control" name="mname" id="mname" placeholder="Middle Name" style="border-radius:10px; color: #000000;  background-color:#C0C0C0; width:240px; height:37px;">
+</div>
+<div class="form-group">
+ <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name" style="border-radius:10px; color: #000000;  background-color:#C0C0C0; width:240px; height:37px;"><br>
+</div>
+
+<h2 style="font-size:30px; margin-left:30px; color:white;">Contact Number: </h2>
+<div class="form-group">
+ <input type="number" class="form-control" style="border-radius:10px; width:380px; height:37px; color: #000000;  background-color:#C0C0C0;" name="contactno" placeholder="Contact Number" id="contactno" required>
+</div>
+
+<h2 style="font-size:30px; color:white;">Email:</h2>
+<div class="form-group">
+ <input type="email" class="form-control" style="border-radius:10px; width:380px; height:37px; color: #000000;  background-color:#C0C0C0; " id="email"  placeholder="Email" name="email"><br>
+</div>
+
+<h2 style="font-size:30px; color:white;">Address:</h2>
+<div class="form-group">
+ <textarea class="form-control" style="border-radius:10px; width:380px; height:60px; color: #000000;  background-color:#C0C0C0; "   placeholder="Address" name="address" id="address"></textarea><br>
+</div>
+
+<h2 style="font-size:30px; color:white;">Complaint Type:</h2>
+<div class="form-group">
+ <input type="text" class="form-control" name="space" style="border-radius:10px; width:380px; height:37px; color: #000000;  background-color:#C0C0C0; " placeholder="Lost and found, Misbehaviour, Damage to vehicle etc" id="space"><br>
+</div>
+
+<h2 style="font-size:30px; color:white;">Message:</h2>
+<div class="form-group">
+ <textarea class="form-control" style="border-radius:10px; width:380px; height:60px; color: #000000;  background-color:#C0C0C0; "   placeholder="message" name="message" id="message"></textarea><br>
+</div>
+<br><hr>
+ <button type="submit" class="registerbtn">SUBMIT</button>
+
+</div>
+</div>
+
+</form>
+</div>
+</body>
+</html>

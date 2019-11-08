@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HomePage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body { background: #0f0f0f; }
+
+header {
+ position: relative;
+ height: 640px;
+ min-height: 500px;
+ width: 100%;
+ background-size: cover !important;
+ -webkit-background-size: cover !important;
+ text-align: center;
+ overflow: hidden;
+ opacity:10;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -100;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+header:before {
+ content: '';
+ display: inline-block;
+ vertical-align: middle;
+ height: 100%;
+}
+
+header .banner {
+ display: inline-block;
+ vertical-align: center;
+ margin: 0 auto;
+ width: 85%;
+ padding-bottom: -100px;
+ text-align: center;
+ font:24px 'opensans-bold', sans-serif;
+ font-weight: bold;
+}
+
+header .banner-text {
+ color: #f5f5f5;
+ width: 100%;
+}
+
+.section h3 {
+  text-align: center;
+  font-size: 60px;
+  font-family: "Cookie";
+  padding: 20px;
+  margin: 15px;
+  z-index: 1;
+
+}
+
+
+.w3-animate-zoom {animation:animatezoom 0.6s} @keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
+
+
+
+/*button*/
+.brk-btn {
+  position: relative;
+  background: none;
+  color: aqua;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid aqua;
+  padding: 0.5em 1em;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    right: 20%;
+    top: -0.21em;
+    transform: skewX(-45deg);
+    -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    left: 20%;
+    bottom: -0.25em;
+    transform: skewX(45deg);
+    -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &:hover {
+    &::before {
+      right: 80%;
+    }
+    &::after {
+      left: 80%;
+    }
+  }
+}
+
+body{
+  background:lightblue;
+  text-align:center;
+  box-sizing:border-box;
+  font-family:"Lato",Sans-serif;
+/*   position:relative; */
+}
+
+.box{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform : translate(-50% ,-50%);
+}
+
+.btn:link,
+.btn:visited{
+  text-decoration: none;
+  text-transform:uppercase;
+  position:relative;
+  top:0;
+  left:0;
+  padding:20px 40px;
+  border-radius:100px;
+  display:inline-block;
+  transition: all .5s;
+}
+
+.btn-white{
+  background:#fff;
+  color:#000;
+}
+
+.btn:hover{
+   box-shadow:0px 10px 10px rgba(0,0,0,0.2);
+   transform : translateY(-3px);
+}
+
+.btn:active{
+  box-shadow:0px 5px 10px rgba(0,0,0,0.2)
+  transform:translateY(-1px);
+}
+
+.btn-bottom-animation-1{
+  animation:comeFromBottom 1s ease-out .8s;
+}
+
+.btn::after{
+  content:"";
+  text-decoration: none;
+  text-transform:uppercase;
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  border-radius:100px;
+  display:inline-block;
+  z-index:-1;
+  transition: all .5s;
+}
+
+.btn-white::after {
+    background: #fff;
+}
+
+.btn-animation-1:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+@keyframes comeFromBottom{
+  0%{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+</style>
+</head>
+<body>
+  <header>
+    <video loop muted autoplay playsinline>
+        <source src="https://www.getmyparking.com/src/gmp-video-720.mp4" type="video/mp4" />
+    </video>
+    <div class="banner">
+       <div class="banner-text">
+        <img class="w3-container w3-center w3-animate-zoom" src="https://i.ibb.co/SsDM6pc/securepark.png" width="300" height="60" >
+          <div class="section">
+
+
+           <h3 class="w3-container w3-center w3-animate-zoom" style="font-size:80px" >SecurePark: Parking Booking</h3>
+
+
+          </div><br><br>
+        <!button type="submit" class="brk-btn" ><!/button>
+        <div class="box">
+        <div class="w3-container w3-center w3-animate-zoom">
+          <a href="/index/" style="margin-top:210px;" class="btn btn-white btn-animation-1">LOGIN</a> <a href="/signup/" style="margin-left:2em;" class="btn btn-white btn-animation-1">SIGNUP</a> <br><br><br>
+          <a href="/contactus/" class="btn btn-white btn-animation-1">Contact us</a>   <a href="complaint" style="margin-left:2em;" class="btn btn-white btn-animation-1">Complaints</a> <br><br><br>
+          <a href="/aboutus/" class="btn btn-white btn-animation-1">About us</a>   <a href="/maps/" style="margin-left:2em;"  class="btn btn-white btn-animation-1">Maps</a>
+        </div>
+        </div>
+       </div>
+    </div>
+  </header>
+</body>
+</html>

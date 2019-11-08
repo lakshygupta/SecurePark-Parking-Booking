@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+
+  background-image: url("https://thumbs.dreamstime.com/z/entry-exit-sign-24660108.jpg");
+
+
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+
+
+  height: 91%;
+
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-text {
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.4);
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+.button {
+  background-color: transparent;
+  border: groove;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+ border-radius: 12px;
+}
+
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #778899;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #1E90FF;
+  color: white;
+}
+
+.topright {
+  position: absolute;
+  top: 1px;
+  right: 10px;
+  font-size: 1px;
+}
+
+.toplg {
+  position: absolute;
+  top: 10px;
+  right: 260px;
+  font-size: 20px;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="topnav">
+<a class="active" href="/">Home</a>
+  <a href="/maps">Map</a>
+    <a href="/fare">Fare</a>
+  <a href="/contactus">Contact us</a>
+    <a href="/aboutus">About us</a>
+    <a href="/complaint">Complaint</a>
+  <a href="/">Log Out</a>
+  <a><div class="topright"><img src="https://i.ibb.co/SsDM6pc/securepark.png" width="210" height="45"></div></a>
+</div>
+
+<div class="bg-image"></div>
+{% if f == 1 %}
+<div class="bg-text">
+  <h2 style="font-size:60px">SecurePark: Parking Booking</h2>
+  <h2 style="text-indent:50px;letter-spacing:3px;">Click on choice </h2>
+<form action="/vehicleentry/">
+ <button class="button button1">Entry </button><br><br>
+</form>
+
+<form action="/vehicleexit/">
+<button class="button button1">Exit</button><br><br>
+</form>
+{% endif %}
+</div>
+
+</body>
+</html>

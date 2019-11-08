@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.topright {
+  position: absolute;
+  top: 6px;
+  right: -300px;
+  font-size: 5px;
+}
+.toplg {
+  position: absolute;
+  top: 20px;
+  right: 300px;
+  font-size: 20px;
+}
+
+img {
+  width: 30%;
+  height: auto;
+  opacity: 10;
+}
+
+
+.container {
+  padding: 16px;
+  background-color: white;
+  background-size: 1000px 500px, 700px 500px, 700px 500px;
+  background-position: 0 -200px, 300px -100px, 700px -200px;
+  height: 900px;
+}
+
+input[type=text], input[type=password] , input[type=number] , input[type=date], input[type=email]{
+  width: 30%;
+  border-radius: 25px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+.selectWrapper{
+  border-radius:25px;
+  display:inline-block;
+  overflow:hidden;
+  background:#cccccc;
+  border:1px solid #cccccc;
+}
+.selectBox{
+  border-radius:25px;
+  width:140px;
+  height:40px;
+  border:0px;
+  outline:none;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.registerbtn {
+  background-color: #1E90FF;
+  color: white;
+  border-radius: 25px;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: 2px solid #000000;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;
+  font-size: 20px;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #FEFEFE;
+  text-align: center;
+}
+
+
+.bg-text {
+  background-color: rgb(255,255,0);
+  background-color: rgba(0,0,0, 0.4);
+  color: white;
+ border-radius: 25px;
+  font-weight: bold;
+  border: 3px solid #708090;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  z-index: 2;
+  width: 79%;
+  padding: 7px;
+  text-align: center;
+}
+
+.bg-image {
+
+  background-image: url("https://i.ibb.co/1dhQKyD/exit1.png");
+
+
+  filter: blur(10px);
+  -webkit-filter: blur(8px);
+  height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.containerimg {
+  position: relative;
+}
+# navigation bar
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Navigation Bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #778899;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #1E90FF;
+  color: white;
+}
+
+.topbw {
+  position: absolute;
+  top: 28px;
+  right: 10px;
+  font-size: 1px;
+}
+</style>
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="/maps">Map</a>
+    <a href="/fare">Fare</a>
+  <a href="/contactus">Contact us</a>
+    <a href="/aboutus">About us</a>
+    <a href="/complaint">Complaint</a>
+    <a href="/">Log Out</a>
+    <a href="/entryex">Entry-Exit</a>
+    <a><div class="toplg">You are currently Logged in</div></a>
+    <a><div class="topright"><img src="https://i.ibb.co/SsDM6pc/securepark.png" width="210" height="45"></div></a>
+</div>
+
+<div class="container">
+
+<div class="bg-image"></div>
+{% if n == 1 %}
+<form action="/vehicleexit/" method="post">
+{% csrf_token %}
+
+      <!div class="topleft">   <!img src="securepark.png" width="100000" height="3000"><!/div>
+
+<div class="bg-text">
+
+<div align="center">
+
+       <h1 style="font-family:Verdana, sans-serif; font-size:40px;">Vehicle Details </h1>
+    <p>Please fill in the details below to get the details of vehicle</p>
+    <hr>
+    <label style="font-size:30px;"><b>Vehicle Number*</b></label><br>
+    <input type="text" class="form-control" placeholder="Enter Vehicle Number " name="vno" minlength="2" maxlength="20"><br><br>
+
+     <div class="form-group">
+      <label style="font-size:30px;"><b>Vehicle Type*</b></label><br>
+     <div class="selectWrapper">
+      <select class="form-control" class="selectBox" name="vty" style=" width: 350px; height: 50px; background-color: #f1f1f1;">
+      <option value="type">Select Type of Vehicle</option>
+      <option value="two">Two Wheeler</option>
+      <option value="three">Three Wheeler</option>
+      <option value="four">Four Wheeler</option>
+      </select>
+    </div>
+</div>
+<br><br>
+    <label for="tno" style="font-size:30px;"><b>Tag Number of vehicle*</b></label><br>
+    <input type="text" placeholder="Enter Tag No." id="tno" name="tno" maxlength="20"><br><br>
+<br>
+    <hr>
+    <p> *Indicates required fields </p>
+    <button type="reset" class="registerbtn">Reset Data</button>
+    <button type="submit" class="registerbtn">Get Details</button>
+
+    <div class="form-group">
+            {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+
+                    <div class="alert alert-success"> {{ message }}</div>
+
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+</div>
+  </div>
+
+</form>
+    {% endif %}
+</body>
+</html>

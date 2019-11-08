@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Print Exit Details</title>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.bg-image {
+
+  background-image: url("http://www.bathcityfc.com/wp-content/uploads/2017/11/Print.jpg");
+
+
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+
+  height: 94%;
+
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-heading {
+   font-family: Verlag,museo-sans,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  position: absolute;
+  top: 10%;
+  left: 126%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 70%;
+  height: 40%
+  text-align: center;
+}
+.bg-text {
+   border-radius: 20px;
+   background-color:  rgb(128, 128, 128);
+   font-family: "Helvetica", Times, serif;
+  color: black;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 67%;
+  padding: 20px;
+  text-align: center;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #778899;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #1E90FF;
+  color: white;
+}
+.topright {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 1px;
+}
+.toplg {
+  position: absolute;
+  top: 10px;
+  right: 260px;
+  font-size: 20px;
+}
+tbody {
+	tr {
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+			}
+		}
+	}
+}
+table {
+	width: 900px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 90px rgba(0,0,0,0.7);
+}
+th,
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+    border: 1px solid black;
+	color: #FFFFE0;
+	padding: 20px;
+	font-size : 20px;
+}
+th {
+	text-align: center;
+    background-color: rgba(255,255,255,0.4);
+    font-size : 20px;
+}
+span.psw {
+  padding-top: 40px;
+}
+
+
+</style>
+
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="/maps">Map</a>
+    <a href="/fare">Fare</a>
+  <a href="/contactus">Contact us</a>
+    <a href="/aboutus">About us</a>
+    <a href="/complaint">Complaint</a>
+    <a href="/">Log Out</a>
+    <a href="/entryex">Entry-Exit</a>
+    <a><div class="toplg">You are currently Logged in</div></a>
+    <a><div class="topright"><img src="https://i.ibb.co/SsDM6pc/securepark.png" width="210" height="40"></div></a>
+</div>
+
+<div class="bg-image"></div>
+<div class="bg-heading">
+   <!span style="font-size:25px" class="psw"><!a href="/vehicleentry/" style="color:black" style="font-size:30px"><!/a><!/span>
+    <button onclick="myFunction()">Print this page</button>
+</div>
+<div class="bg-text">
+<script>
+function myFunction() {
+  window.print();
+}
+</script>
+
+{% if obj %}
+<table>
+<tbody>
+  <tr>
+      <td style="color: #000000;"><b>Your Vehicle Number :</b></td>
+    <td style="text-align:center;">{{ obj.vno }}</td>
+  </tr>
+  <tr>
+      <td style="color: #000000;"><b>Vehicle Type :</b></td>
+    <td style="text-align:center;">{{ obj.vty }}</td>
+  </tr>
+  <tr>
+      <td style="color: #000000;"><b>Out-Time of vehicle :</b></td>
+    <td style="text-align:center;">{{ obj.outtime }}</td>
+  </tr>
+  <tr>
+      <td style="color: #000000;"><b>Total Fare to be paid :</b></td>
+    <td style="text-align:center;">{{ obj.farem }}</td>
+  </tr>
+  <tr>
+      <td style="color: #000000;"><b>Tag Number:</b></td>
+    <td style="text-align:center;">{{ obj.tno }}</td>
+  </tr>
+</tbody>
+</table>
+{% endif %}
+</div>
+</body>
+</html>

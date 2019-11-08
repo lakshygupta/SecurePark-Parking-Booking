@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	background: linear-gradient(45deg, #49a09d 0%, #5f2c82 100%);
+	font-family: sans-serif;
+	font-weight: 100;
+
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+.container {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.text h1{
+ font-size:32px;
+ color:#fff;
+ text-align:center;
+ font-weight:bold;
+ margin-top:120px;
+ padding-bottom:30px;
+ font-family:cursive;
+ font-size:70px;
+}
+/* Navigation Bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #778899;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #1E90FF;
+  color: white;
+}
+
+.topright {
+  position: absolute;
+  top: 1px;
+  right: 10px;
+  font-size: 1px;
+}
+.button {
+  background-color: transparent;
+  border: groove;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 12px;
+}
+.toplg {
+  position: absolute;
+  top: 10px;
+  right: 260px;
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="/maps">Map</a>
+  <a href="/fare">Fare</a>
+  <a href="/index/">Logout</a>
+  <a><div class="toplg">Admin view is active</div></a>
+  <a><div class="topright"><img src="https://i.ibb.co/SsDM6pc/securepark.png" width="210" height="45"></div></a>
+</div>
+<br>
+<h2 style="text-align:center;color:white;">Welcome Admin!!</h2>
+
+<form action="/printcomplaint/">
+ <button class="button button1" style="margin-left:590px;margin-top:50px;">View Complaints</button><br><br>
+</form>
+<form action="/printcontact/">
+ <button class="button button1" style="margin-left:605px;margin-top:50px;">View Contact</button><br><br>
+</form>
+<form action="/printvehicles/">
+ <button class="button button1" style="margin-left:605px;margin-top:50px;">Vehicles List</button><br><br>
+</form>
+<br><br><br>
+<h4 style="text-align:center;color:white;">This page is Admin only. Please logout if not in use.</h4>
+</body>
+</html>

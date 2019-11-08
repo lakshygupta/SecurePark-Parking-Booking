@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+
+  background-image: url("https://i.ibb.co/vV7yZDR/vehicleentry.jpg");
+
+
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+
+  height: 94%;
+
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-heading {
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0);
+    color: white;
+   font-family: Verlag,museo-sans,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  position: absolute;
+  top: 15%;
+  left: 59%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 70%;
+  height: 40%
+  text-align: center;
+}
+.bg-text {
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.6);
+  font-weight: bold;
+   font-family: "Helvetica", Times, serif;
+  border: 3px solid #708090;
+  color: white;
+  border-radius: 25px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,18), 0 6px 20px 0 rgba(0,0,0,0.30);
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #778899;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #1E90FF;
+  color: white;
+}
+.toplg {
+  position: absolute;
+  top: 10px;
+  right: 260px;
+  font-size: 20px;
+}
+span.psw {
+  padding-top: 40px;
+}
+.button {
+  background-color: transparent;
+  border: groove;
+  color: white;
+  border-radius: 25px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+ border-radius: 12px;
+}
+.registerbtn {
+  background-color: #4169E1;
+  color: white;
+  border-radius: 25px;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;
+  font-size: 20px;
+}
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+.topright {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 1px;
+}
+
+</style>
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="/maps">Map</a>
+    <a href="/fare">Fare</a>
+  <a href="/contactus">Contact us</a>
+    <a href="/aboutus">About us</a>
+    <a href="/complaint">Complaint</a>
+    <a href="/">Log Out</a>
+    <a href="/entryex">Entry-Exit</a>
+    <a><div class="toplg">You are currently Logged in</div></a>
+    <a><div class="topright"><img src="https://i.ibb.co/SsDM6pc/securepark.png" width="210" height="40"></div></a>
+</div>
+
+<div class="bg-image"></div>
+{% if n == 1 %}
+<div class="bg-text">
+<form action="/vehicleentry/" method="post">
+{% csrf_token %}
+    <h1 style="text-align:center; font-size:30px; color:white; font-family:sans-serif;">Vehicle Details </h1>
+<hr>
+<h2 style="font-size:20px; color:white;">VEHICLE NUMBER: </h2>
+<input type="text" name="vnumber" id="vnumber" placeholder="Enter Vehicle Number" style="border-radius:25px; color: #000000;  background-color:#C0C0C0; width:380px; height:37px;"><br>
+
+<h2 style="font-size:20px; color:white;">VEHICLE TYPE: </h2>
+<div class="selectWrapper">
+ <select class="selectBox" name="vtype" style="width: 380px; height:40px; background-color:#C0C0C0;border-radius: 25px;" id="vtype">
+  <option value="type">Select Type of Vehicle</option>
+  <option value="two">Two Wheeler</option>
+  <option value="three">Three Wheeler</option>
+  <option value="four">Four Wheeler</option>
+</select><br>
+</div>
+
+<h2 style="font-size:20px; margin-left:30px; color:white;">CONTACT NUMBER: </h2>
+<input type="tel" style="border-radius:25px; width:380px; height:37px; color: #000000;  background-color:#C0C0C0;" name="contactno" placeholder="Enter Contact Number" id="contactno">
+
+<br><hr>
+ <button type="submit" class="registerbtn">SUBMIT</button>
+ <button type="submit" formaction="/printentry/" class="registerbtn">Print Recipt</button>
+
+</form>
+{% endif %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 20%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+ float: left;
+ border: 3px solid #000000;
+  opacity: 0.8;
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,18), 0 6px 20px 0 rgba(0,0,0,0.30);
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container {
+  position: relative;
+  border: 3px solid #000000;
+  display: none;
+   background-color : #B0E0E6;
+color : black;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,18), 0 6px 20px 0 rgba(0,0,0,0.30);
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: black;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: black;
+  font-size: 35px;
+  cursor: pointer;
+}
+/* Navigation Bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #778899;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #1E90FF;
+  color: white;
+}
+
+
+.topright {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 1px;
+}
+
+.background{
+ background-color : #B0E0E6;
+color : black;
+}
+
+</style>
+</head>
+<body>
+<div class="background">
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+    <a href="/fare">Fare</a>
+  <a href="/contactus">Contact us</a>
+    <a href="/aboutus">About us</a>
+    <a href="/complaint">Complaint</a>
+  <a href="/signup/">SignUp</a>
+    <a><div class="topright"><img src="https://i.ibb.co/SsDM6pc/securepark.png" width="210" height="40"></div></a>
+</div>
+<div style="text-align:center">
+  <h2>Maps and Image gallery</h2>
+  <p>Click on the images below:</p>
+</div>
+
+<!-- The four columns -->
+
+<div class="row">
+  <div class="column">
+    <img width="40" height="200" src="https://i.ibb.co/s6JYNxs/map1.png" alt="Parking Floors"  style="width:100%" onclick="myFunction(this);">
+
+  </div>
+  <div class="column">
+    <img width="40" height="200" src="https://i.ibb.co/Lg84YFb/map2.jpg" alt="Top View" style="width:100%" onclick="myFunction(this);">
+
+  </div>
+  <div class="column">
+    <img width="40" height="200" src="https://i.ibb.co/LJwxHTJ/map3.jpg" alt=" Two wheeler parking" style="width:100%" onclick="myFunction(this);">
+
+  </div>
+  <div class="column">
+    <img width="40" height="200" src="https://i.ibb.co/ZSPxKrb/map5.jpg" alt="Overall view" style="width:100%" onclick="myFunction(this);">
+
+  </div>
+ <div class="column">
+    <img width="40" height="200" src="https://i.ibb.co/YbBSbnw/map6.jpg" alt="Space Allotment for vehicles" style="width:100%" onclick="myFunction(this);">
+
+  </div>
+</div>
+</div>
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+
+</body>
+</html>

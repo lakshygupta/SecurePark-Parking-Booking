@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+
+  background-image: url("https://login.gov/assets/img/login-gov-288x288.png");
+
+
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+
+  height: 92%;
+
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-heading {
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0);
+    color: white;
+   font-family: Verlag,museo-sans,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  position: absolute;
+  top: 15%;
+  left: 59%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 70%;
+  height: 40%
+  text-align: center;
+}
+.bg-text {
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.6);
+  font-weight: bold;
+   font-family: "Helvetica", Times, serif;
+  border: 3px solid #708090;
+  color: white;
+  border-radius: 25px;
+  position: absolute;
+  top: 59%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 50%;
+  padding: 00px;
+  text-align: center;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,18), 0 6px 20px 0 rgba(0,0,0,0.30);
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #778899;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #1E90FF;
+  color: white;
+}
+
+span.psw {
+  padding-top: 40px;
+}
+.button {
+  background-color: transparent;
+  border: groove;
+  color: white;
+  border-radius: 25px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+ border-radius: 12px;
+}
+.registerbtn {
+  background-color: #4169E1;
+  color: white;
+border-radius: 25px;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+  font-size: 20px;
+}
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+.topright {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 1px;
+}
+.bg-detail {
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.6);
+  font-weight: bold;
+  font-family: "Helvetica", Times, serif;
+  border: 3px solid #708090;
+  color: white;
+  border-radius: 25px;
+  position: absolute;
+  top: 81%;
+  left: 87%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 20%;
+  padding: 0px;
+  text-align: center;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,18), 0 6px 20px 0 rgba(0,0,0,0.30);
+}
+</style>
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="/maps">Map</a>
+    <a href="/fare">Fare</a>
+  <a href="/contactus">Contact us</a>
+    <a href="/aboutus">About us</a>
+    <a href="/complaint">Complaint</a>
+  <a href="/signup/">SignUp</a>
+    <a><div class="topright"><img src="https://i.ibb.co/SsDM6pc/securepark.png" width="210" height="40"></div></a>
+</div>
+
+<div class="bg-image"></div>
+     <div class="bg-heading">
+        <h2 style="font-size:50px">SecurePark: Parking Booking</h2>
+     </div>
+<div class="bg-text">
+  <h1 style="font-size:35px; font-family:helvetica;"> Log In </h1>
+     <hr>
+<form action=" " method="post">
+    {% csrf_token %}
+    <h2 style="font-size:25px; padding-bottom:0px;">Username </h2>
+    <input type="text" style="font-size:20px; border-radius: 25px; " name="username"><br>
+    <h2 style="font-size:25px; padding-bottom:0px;">Password  </h2>
+    <input type="password" style="font-size:20px;border-radius: 25px;" name="password"><br><br>
+    <input class="registerbtn" type="submit" style="font-size:15px" value="Login">
+    <br><br>
+    <span style="font-size:25px" class="psw"> Forgot <a href="/forgot/" style="color:yellow" style="font-size:30px">Password?</a></span>
+</form>
+    <br>
+    <div class="form-group">
+            {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+
+                    <div class="alert alert-success" style="color:red;"> {{ message }}</div>
+
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+
+</div>
+<div class="bg-detail">
+    <h3>Designed by:</h3>
+    <p>Lakshy Gupta</p>
+    <p>Ritik Miglani</p>
+    <p>Diksha</p>
+</div>
+</body>
+</html>
