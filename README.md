@@ -4,7 +4,7 @@ Programming Languages used in the web application :- <br />
 **Backend :** Python, Django framework <br />
 **Database :** SQLite3 <br />
 <br />
-#####SecurePark is a web application made with Django. Django is a high-level Python Web framework used for creating web applications.<br />
+##### SecurePark is a web application made with Django. Django is a high-level Python Web framework used for creating web applications.<br />
 The web application mainly deals with the parking of different vehicles inside a parking lot. From entry of a vehicle to manage the car parking space and storing the details of owner we handles everything in a better way.
 <br />
 <br />
