@@ -9,7 +9,7 @@ The web application mainly deals with the parking of different vehicles inside a
 <br />
 <br />
 This application has **sign up based login system for multiple users at single time**. After successful login they landed on a page where they have to choose whether they have to enter their vehicle to the
-parking lot or want to exit it. After they have clicked on Entry than a page is opened where they have to **enter there vehicle number and type of vehicle (two/three/four wheeler) and their contact number**.
+parking lot or want to exit it. After they have clicked on Entry than a page is opened where they have to **enter their vehicle number and type of vehicle (two/three/four wheeler) and their contact number**.
 After entring the given details they have to sumbit the details and click on print recipt. _For every vehicle a unique tag number is generated which has al the details of the floor and space where the vehicle has to park_.
 They can either print the page or simply click the image of the recipt.
 <br />
