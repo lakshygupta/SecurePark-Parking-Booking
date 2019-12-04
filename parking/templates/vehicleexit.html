@@ -37,7 +37,7 @@ img {
   background-color: white;
   background-size: 1000px 500px, 700px 500px, 700px 500px;
   background-position: 0 -200px, 300px -100px, 700px -200px;
-  height: 900px;
+  height: 576px;
 }
 
 input[type=text], input[type=password] , input[type=number] , input[type=date], input[type=email]{
@@ -107,16 +107,17 @@ a {
   background-color: rgb(255,255,0);
   background-color: rgba(0,0,0, 0.4);
   color: white;
- border-radius: 25px;
+  border-radius: 25px;
   font-weight: bold;
   border: 3px solid #708090;
   position: absolute;
-  top: 90%;
+  top: 63%;
   left: 50%;
   transform: translate(-50%, -60%);
   z-index: 2;
-  width: 79%;
-  padding: 7px;
+  height: 90%;
+  width: 50%;
+  padding: -10px;
   text-align: center;
 }
 
@@ -201,16 +202,16 @@ body {
 
 <div align="center">
 
-       <h1 style="font-family:Verdana, sans-serif; font-size:40px;">Vehicle Details </h1>
+       <h1 style="font-family:Verdana, sans-serif; font-size:20px;">Vehicle Details </h1>
     <p>Please fill in the details below to get the details of vehicle</p>
     <hr>
-    <label style="font-size:30px;"><b>Vehicle Number*</b></label><br>
+    <label style="font-size:20px;"><b>Vehicle Number*</b></label><br>
     <input type="text" class="form-control" placeholder="Enter Vehicle Number " name="vno" minlength="2" maxlength="20"><br><br>
 
      <div class="form-group">
-      <label style="font-size:30px;"><b>Vehicle Type*</b></label><br>
+      <label style="font-size:20px;"><b>Vehicle Type*</b></label><br>
      <div class="selectWrapper">
-      <select class="form-control" class="selectBox" name="vty" style=" width: 350px; height: 50px; background-color: #f1f1f1;">
+      <select class="form-control" class="selectBox" name="vty" style=" width: 200px; height: 50px; background-color: #f1f1f1;">
       <option value="type">Select Type of Vehicle</option>
       <option value="two">Two Wheeler</option>
       <option value="three">Three Wheeler</option>
@@ -219,11 +220,9 @@ body {
     </div>
 </div>
 <br><br>
-    <label for="tno" style="font-size:30px;"><b>Tag Number of vehicle*</b></label><br>
+    <label for="tno" style="font-size:20px;"><b>Tag Number of vehicle*</b></label><br>
     <input type="text" placeholder="Enter Tag No." id="tno" name="tno" maxlength="20"><br><br>
-<br>
     <hr>
-    <p> *Indicates required fields </p>
     <button type="reset" class="registerbtn">Reset Data</button>
     <button type="submit" class="registerbtn">Get Details</button>
 

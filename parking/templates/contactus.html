@@ -1,27 +1,30 @@
 <html>
 <head>
-    <title>Contact Us</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 
 body {
-	font-family: Arial, Helvetica, sans-serif;
-    background-color: black;
+	font-family:default-ui;
+	max-width: 100%;
+	height: 100%;
+    overflow-y: hidden;
 }
 
 .container {
 	text-align:right;
 	margin-left:60px;
-	margin-right:110px;
+	margin-right:90px;
 	color: white;
 	position:relative;
 	float:right;
+	margin-top: -32px;
 }
 
 .topnav {
   overflow: hidden;
   background-color: #333;
+  top: 100%;
 }
 
 .topnav a {
@@ -31,6 +34,7 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  top:100%;
 }
 
 .topnav a:hover {
@@ -42,18 +46,18 @@ body {
   background-color: #1E90FF;
   color: white;
 }
-
 .topright {
   position: absolute;
-  top: 6px;
-  right: -300px;
+  top: 4px;
+  right: -200px;
   font-size: 5px;
 }
+
 sales {
 	text-align:left;
-	margin-top:170px;
+	margin-top:150px;
 	margin-right:50px;
-	margin-left:450x;
+	margin-left:440x;
 	padding-left:90px;
 	color:white;
 }
@@ -83,17 +87,18 @@ input[type=text], input[type=password] , input[type=number] , input[type=date], 
   opacity: 1;
 }
 
+
 .bg-color {
-  padding: 16px;
+  padding: 3px;
   background-color: green;
   /*background: #344761;*/
   background:  linear-gradient(to left, #33ccff 0%, #339966 100%);
-  height: 870px;
+  height: 580px;
 }
 .topbw {
   position: absolute;
-  top: 25px;
-  right: 23px;
+  top: 8px;
+  right: 11px;
   font-size: 1px;
 }
 .selectWrapper{
@@ -107,7 +112,7 @@ display:inline-block;
 </style>
 </head>
 <body>
-<div class="bg-color">
+
 <div class="topnav">
   <a class="active" href="/">Home</a>
   <a href="/maps">Map</a>
@@ -115,14 +120,14 @@ display:inline-block;
     <a href="/aboutus">About us</a>
     <a href="/complaint">Complaint</a>
   <a href="/signup/">SignUp</a>
-  <a><div class="topbw"><img src="https://i.ibb.co/SsDM6pc/securepark.png" width="140" height="45"></div></a>
+  <a><div class="topbw"><img src="https://i.ibb.co/SsDM6pc/securepark.png" width="140" height="47"></div></a>
 </div>
-<h1 style="color:white; font-size:70px; text-align:center;color:black;font-family:cursive;">Contact Us</h1>
-<hr>
-<br>
+<div class="bg-color">
+<h1 style="color:white; font-size:45px; text-align:center;color:black;font-family:cursive; margin-top:-2px;">Contact Us</h1>
+    <hr>
 <div class="sales">
  <div class="container">
-  <h2 style="text-align:center; font-size:40px;color:black;font-family:cursive;">Do you have any Questions?</h2>
+  <h2 style="text-align:center; font-size:30px;color:black;font-family:cursive;">Do you have any Questions?</h2>
   <h4>Fill out our contact form and we will contact you as soon as possible</h4>
   <form action="/contactus/" method="post">
   {% csrf_token %}
@@ -130,7 +135,7 @@ display:inline-block;
    <input type="text" class="form-control" name="name" id="name" placeholder="Name" style="font-size:15px; height:40px; width:470px;"><br><br>
   </div>
   <div class="form-group">
-   <input type="email" class="form-control" name="mail" id="mail" placeholder="Email" style="font-size:15px; height:40px; width:470px;"><br><br>
+   <input type="email" class="form-control" name="email" id="email" placeholder="Email" style="font-size:15px; height:40px; width:470px;"><br><br>
   </div>
   <div class="form-group">
    <input type="text" class="form-control" name="contactno" id="contactno" placeholder="Contact Number" style="font-size:15px; height:40px; width:470px;"><br><br>
@@ -143,21 +148,17 @@ display:inline-block;
 
 </form>
  </div>
-<h1 style="color:white; font-size:40px;color:black;font-family:cursive;">Start a conversation.</h1>
+<h1 style="color:white; font-size:30px;color:black;font-family:cursive;">Start a conversation.</h1>
 
-<h2 style="color:black;font-size:30px;">For sales queries</h2>
-<h4 style="color:white;font-size:20px;">sales@securepark.com</h4>
+<h2 style="color:black;font-size:35px;">For Lost & Found queries</h2>
+<h4 style="color:white;font-size:22px;font-weight:15">lakshygupta99@gmail.com</h4>
 <hr style="margin-right:500px; float:center;">
 
-<h2 style="color:black;font-size:30px;">For general queries</h2>
-<h4 style="color:white;font-size:20px;">care@securepark.com</h4>
+<h2 style="color:black;font-size:35px;">For general queries</h2>
+<h4 style="color:white;font-size:22px;font-weight:15">miglaniritik20@gmail.com</h4>
 <hr>
 
-<h2 style="color:black;font-size:30px;">For career</h2>
-<h4 style="color:white;font-size:20px;">talent@securepark.com</h4>
-<hr>
-
-<h3 style="color:black;font-size:35px;">Helpline 096-501-569-82</h3>
+<h3 style="color:black;font-size:40px;">Helpline 096-501-56-982</h3>
 </div>
 </div>
 </body>
